@@ -1,4 +1,4 @@
-#!/bin/bash  
+#!/bin/bash
 
 chmod +x *.sh armbian-monitor
 
@@ -12,5 +12,4 @@ cp ./armbian-monitor.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable armbian-monitor.service
 systemctl restart armbian-monitor.service
-
 echo "Instalasi selesai"
