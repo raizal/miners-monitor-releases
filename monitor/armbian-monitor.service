@@ -8,8 +8,8 @@ WorkingDirectory=/root/monitor
 ExecStart=/bin/bash /root/monitor/run.sh
 Restart=always
 RestartSec=1
+KillMode=none
+ExecStop=/usr/bin/pkill -f armbian-monitor
 
 [Install]
 WantedBy=multi-user.target
-
-
