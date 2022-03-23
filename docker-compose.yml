@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  linux:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/source
+      - x64bin:/deploy/bin
+    working_dir: /source
+    command: sh -c "cd /source/arm64/ && zip -r monitor-arm64.zip ./monitor && mv monitor-arm64.zip /deploy/bin/ && cd /source/amd64/ && zip -r monitor-amd64.zip ./monitor && mv monitor-amd64.zip /deploy/bin/"
+
+volumes:
+  x64bin:
+    external: true
